@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript program to calculate age</title>
+</head>
+<body>
+<script>
+    var Name = prompt("Type your Name","Ali")
+    var date= prompt("Type your DOB(date)","1-31")
+    var month= prompt("Type your DOB(month)","1-12")
+    month=month-1;
+    var year= prompt("Type your DOB(years)","1992")
+    myFunction(Name);
+    var data =new Date(year, month, date) ;
+    function calculate_age(dob) { 
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms); 
+  
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+}
+console.log("Your DOB is " + data);
+console.log("Yours age in Years is " + calculate_age(data));
+
+console.log("Your Age in Days is  "+Math.ceil((new Date() - data) / (1000 * 60 * 60 * 24)) );
+console.log("Your Age in Hours is " + Math.ceil((new Date() - data) / (1000 * 60 * 60 )) );
+console.log(Date.now("MM-dd") - data);
+
+
+function myFunction(name) {
+  
+  var time = new Date().getHours();
+  if (time < 11) {
+    console.log("Hello "+ name + " Good Morning");
+    
+  } else if (time < 15) {
+    console.log("Hello "+ name + " Good Afternoon");
+  } 
+  else if (time < 18) {
+    console.log("Hello "+ name + " Good Evening");
+  } 
+  else {
+    console.log("Hello "+ name + " Good Night");
+  }
+  
+}
+</script>
+</body>
+
+</html>
